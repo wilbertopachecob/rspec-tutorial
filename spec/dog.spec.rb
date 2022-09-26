@@ -9,14 +9,18 @@ describe Dog do
     end
 
     describe '#hungry?' do
-        it 'should return true if hungry_level is more than 5' do
-            dog = described_class.new(hungry_level: 7)
-            expect(dog.hungry?).to eql(true)
+        context 'when hungry_level is more than 5' do
+            it 'returns true' do
+                dog = described_class.new(hungry_level: 7)
+                expect(dog.hungry?).to eql(true)
+            end    
         end
 
-        it 'should return false if hungry_level is less or equal to 5' do
-            dog = described_class.new(hungry_level: 5)
-            expect(dog.hungry?).to eql(false)
+        context 'hungry_level is less or equal to 5' do
+            it 'returns false' do
+                dog = described_class.new(hungry_level: 5)
+                expect(dog.hungry?).to eql(false)
+            end    
         end
     end
 end
