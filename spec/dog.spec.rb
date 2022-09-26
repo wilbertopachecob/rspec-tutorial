@@ -23,4 +23,14 @@ describe Dog do
             end    
         end
     end
+
+    describe '#feed' do
+      context 'when the dog is hungry' do
+        subject {described_class.new(hungry_level: 7)}
+        it 'its no longer hungry' do
+            subject.feed
+            expect(subject).not_to be_hungry
+          end
+      end
+    end
 end

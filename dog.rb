@@ -11,4 +11,8 @@ class Dog
     def hungry?
         @hungry_level > 5
     end
+
+    def feed
+        @hungry_level = 0
+    end
 end
