@@ -10,16 +10,16 @@ describe Dog do
 
     describe '#hungry?' do
         context 'when hungry_level is more than 5' do
+            subject {described_class.new(hungry_level: 7)}
             it 'returns true' do
-                dog = described_class.new(hungry_level: 7)
-                expect(dog.hungry?).to eql(true)
+                expect(subject.hungry?).to eql(true)
             end    
         end
 
         context 'hungry_level is less or equal to 5' do
+            subject {described_class.new(hungry_level: 5)}
             it 'returns false' do
-                dog = described_class.new(hungry_level: 5)
-                expect(dog.hungry?).to eql(false)
+                expect(subject.hungry?).to eql(false)
             end    
         end
     end
